@@ -1,21 +1,108 @@
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
   display: flex;
   justify-content: center;
+  margin: 0 auto;
+  width: 100vw;
+  background-color: rgba(0, 80, 140, 0.3);
 }
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+  ::-webkit-scrollbar-thumb {
+    background-color: rgb(30, 30, 30);
+    border-radius: 10px;
+  }
 
 .Header {
   background-color: rgb(30, 30, 30);
   color: white;
-  width: 100%;
   height: 10vh;
   display: flex;
   align-items: center;
-  padding-left: 8%;
+  padding-left: 5vw;
 }
 
   .ProfileIcon {
-    height: 100px;
-    width: 100px;
+    height: 9vh;
   }
 
+  .SearchInput {
+    width: 80%;
+  }
+  
+.GameListContainer {
+  width: 35vw;
+  padding: 15px;
+  height: 87vh;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+  .GameItem {
+    align-items: center;
+    margin: 10px 0;
+    padding: 5px;
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: space-around;
+  }
+
+    .GameItemInfo {
+      text-align: left;
+    }
+
+      .FlexItem {
+        display: flex;
+      }
+        .FlexItem > * {
+          margin: 0 5px 0 0;
+        }
+
+      .FlexColumn {
+        display: flex;
+        flex-direction: column;
+        margin: 0 15px 0 0;
+      }
+  
+    .GameItemButton {
+      height: 3vh;
+    }
+
+.MyCollectionContainer {
+  width: 30vw;
+  padding: 0 15px;
+  border-right: solid rgb(30, 30, 30, 0.8);
+}
+
+  .MyCollectionHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.3);
+    background-color: rgb(30, 30, 30, 0.85);
+    color: white;
+  }
+
+  .MyGameItem {
+    align-items: center;
+    margin: 10px 0;
+    padding: 5px;
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: space-around;
+  }

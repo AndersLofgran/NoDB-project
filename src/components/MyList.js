@@ -8,18 +8,26 @@ export default function MyList(props) {
     return <MyGame newUserRating={props.newUserRating}
                    removeFromCollection={props.removeFromCollection}
                    name={myGamesProperty[i].name}
+                   official_url={myGamesProperty[i].official_url}
                    rating={myGamesProperty[i].rating}
                    price={myGamesProperty[i].price}
                    min_players={myGamesProperty[i].min_players}
                    max_players={myGamesProperty[i].max_players}
+                   image_small={myGamesProperty[i].image_small}
+                   weight_amount={myGamesProperty[i].weight_amount}
                    id={myGamesProperty[i].id}
                    key={myGamesProperty[i].id} />
   })
 
   return (
-    <div>My Collection
-      {gameCollection}
-    </div>
+    <>
+      <div className='MyCollectionContainer' >
+        <div className='MyCollectionHeader'>
+          <h2>My Collection</h2>
+        </div>
+        {gameCollection}
+      </div>
+    </>
   )
 
 }

@@ -12,7 +12,7 @@ app.use(cors())
 app.get('/api/all-games', gamesCtrl.showAllGames)
 app.get('/api/my-games', gamesCtrl.showMyGames)
 app.post('/api/my-games', gamesCtrl.addGame)
-app.put('/api/my-games/:id', gamesCtrl.changeRating)
+app.put('/api/my-games/:name', gamesCtrl.changeRating)
 app.delete('/api/my-games/:id', gamesCtrl.removeGame)
 
 

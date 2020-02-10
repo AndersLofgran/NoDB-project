@@ -17,28 +17,26 @@ export default class App extends React.Component {
   
   componentDidMount() {
     axios.get('/api/all-games').then(res => {
-      this.setState({allGames: res.data})
+      this.setState({myGames: res.data.myGames, allGames: res.data.allGames})
     })
   }
 
   addToCollection = (game) => {
     axios.post(`/api/my-games`, {game}).then(res => {
-      this.setState({myGames: res.data})
-      // axios.delete(`/api/all-games/${id}`).then(res => {
-      //   this.setState({allGames: res.data})
-      // })
+      this.setState({myGames: res.data.myGames, allGames: res.data.allGames})
     })
   }
 
-  newUserRating = (id, newRating) => {
-    axios.put(`/api/my-games/${id}`, {newRating}).then(res => {
+  newUserRating = (name, newRating) => {
+    console.log('name: ', name);
+    axios.put(`/api/my-games/${name}`, {newRating: Number(newRating)}).then(res => {
       this.setState({myGames: res.data})
     })
   }
 
   removeFromCollection = (id) => {
     axios.delete(`/api/my-games/${id}`).then(res => {
-      this.setState({myGames: res.data})
+      this.setState({myGames: res.data.myGames, allGames: res.data.allGames})
     })
   }
 
@@ -48,7 +46,7 @@ export default class App extends React.Component {
         <Header />
         <div className='App'>
           <MyList myGames={this.state.myGames}
-                  newUserRating={this.updateGameRating}
+                  newUserRating={this.newUserRating}
                   removeFromCollection={this.removeFromCollection} />
           <GameList allGames={this.state.allGames}
                     addToCollection={this.addToCollection} />
